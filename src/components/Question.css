@@ -1,0 +1,114 @@
+.questionContainer {
+background-color: #eff0f3;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-position: right;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding:80px 150px;
+}
+.questionHeaderAndTimer{
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.questionHeader{
+  color: #2a2a2a;
+  font-weight: 700;
+}
+.timeSection{
+  background-color: #2a2a2a;
+  color: #eff0f3;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+ width: 5vw;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.questionSectionContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+.questionLeftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 55vh;
+  width: 50vw;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+  border-radius:20px;
+  justify-content: space-around;
+  border: 2px solid #eff0f3;
+}
+
+.questionText{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.answerOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.questionOption{
+    border: none;
+    text-align: start;
+    padding: 10px;
+    padding-left: 24px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: 300ms all;
+}
+.questionOption:hover{
+    border: 1px solid #021B35;
+}
+
+.questionRightSection {
+  height: 55vh;
+  width: 20vw;
+  border-radius: 20px;
+  border: 2px solid #eff0f3;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background:#ff8e3c;
+}
+.square {
+  border: 1px solid #eff0f3;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nextQuestionButton{
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 20px;
+    border: 1px solid #2a2a2a;
+    width: 20vw;
+    padding: 20px;
+    margin-top: 20px;
+   position: relative;
+   left:30vw;
+}
+
+.questionOptionClick{
+  border: 1px solid black;
+}

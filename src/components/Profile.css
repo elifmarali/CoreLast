@@ -1,0 +1,144 @@
+.profileContainer{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    background: #eff0f3;
+    height: auto;
+    width: 50vw ;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 60px;
+    gap: 20px;
+   
+}
+
+.profileImageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.adminImage{
+ width: 100px;
+ height: 100px;
+ border-radius: 50%;
+ border: 1px solid #fffffe;
+
+}
+
+.easyInfoContainer{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-around;
+
+}
+
+.easyItem{
+    width: 50%;
+    color: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.easySpan{
+    background-color: lightgray;
+    width: 1px;
+    height: 100%;
+}
+.profileName,.examScore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.profileNameValue{
+    color: #0d0d0d;
+    font-weight: 700;
+    font-size: 20px;
+}
+.profileDesc{
+    color: #ff8e3c;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.profileValue {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .examDetails {
+    display: none; 
+    margin: 10px 0;
+  }
+
+  .easyLabel{
+    color: #ff8e3c;
+    font-weight: 700;
+  }
+
+  .easyValue{
+    font-weight: 600;
+  }
+  
+  details[open] .examDetails {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .examInfo {
+    display: flex;
+    align-items: center;
+    color: #0d0d0d;
+    gap: 30px;
+
+  }
+  
+  .examName {
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 10px;
+    width: 10vw;
+
+  }
+  
+  .examScore {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .certificateDownload {
+    text-align: right;
+
+  }
+  
+  .profileLink {
+    color: #d9376e;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  summary{
+    color: #0d0d0d;
+    font-weight: 600;
+    list-style: none;
+    background-color: #fffffe;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }

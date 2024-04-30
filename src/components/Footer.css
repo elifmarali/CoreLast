@@ -1,0 +1,82 @@
+.footer {
+    background-color: #eff0f3;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.footerOptions {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footerOption,
+.footerOptions button {
+    border: none;
+    color: #0d0d0d;
+    font-size: 16px;
+}
+
+.footerLink:hover {
+    transition: 300ms all;
+    cursor: pointer;
+    color: #ff8e3c;
+
+}
+
+.socialMedia {
+    bottom: 0;
+    transform: translateX(-50%, -50%);
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.socialMedia div {
+    display: inline-flex;
+}
+
+.socialMedia div a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: #ff8e3c;
+    margin: 0 6px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+
+}
+
+.socialMedia .facebook a:hover {
+    background: #4267b2;
+}
+
+.socialMedia .twitter a:hover {
+    background: #1da1f2;
+}
+
+.socialMedia .google a:hover {
+    background: #d34c3d;
+}
+
+
+.socialMedia .instagram a:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.socialMedia .youtube a:hover {
+    background: #fe0000;
+}
+
+
+.socialMedia a:hover i {
+    transform: scale(1.6) rotate(360deg);
+    transition: transform 0.5s ease;
+}

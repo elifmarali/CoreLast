@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+.questionInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.questionInfoMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  height: 100%;
+  background-image: linear-gradient(180deg, #ff8e3c, #d9376e, #fffffe);
+  padding: 20px;
+}
+.head {
+  font-size: 40px;
+  color: aliceblue;
+  font-weight: 700;
+}
+.questionInfoSection {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 60vh;
+  width: 70vw;
+  padding: 20px 60px;
+}
+.cizgi {
+  border: 0.4px solid lightgray;
+  height: 45vh;
+}
+
+.questionInfoLeftSectionHeader {
+  font-family: "Abril Fatface", serif;
+  font-size: 70px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+.questionInfoRightSection {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+}
+.questionInfoRightSection .questionInfoRightSectionTop ul {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 0;
+}
+.questionInfoRightSection .questionInfoRightSectionBottom ul {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 0;
+}
+.rightSectionItem {
+  font-size: 12px;
+  font-weight: 100;
+  color:#2a2a2a ;
+}
+.rightSectionItemfs{
+  font-size: 14px;
+}
+.questionInfoButton {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 10px 50px;
+  border: 1.8px solid #0d0d0d;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: 400ms all;
+  margin-top: 10px;
+}
+.questionInfoButton:hover {
+  background-color:#2a2a2a ;
+  transform: scale(1.05);
+}

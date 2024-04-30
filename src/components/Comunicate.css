@@ -1,0 +1,105 @@
+.containerMap {
+  width: 70%;
+  margin: 20px auto;
+  background: linear-gradient(90deg, #ff8e3c 0%, #eff0f3 100%);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.mapAndListContainer {
+  display: flex;
+  justify-content: space-between; /* Elemanları container içinde sağa ve sola hizala */
+  align-items: flex-start;
+}
+
+.listContainer {
+  width: 50%;
+  padding-left: 10px;
+  flex: 1; /* Liste alanının esnekliği */
+  margin-left: 20px;
+  background-color: #f5f5f5;  /* Lineer gradyan arka plan */
+  padding: 20px; /* Listenin içeriğinden kenarlara boşluk bırakmak için padding ekledik */
+  border-radius: 10px; /* Kenarlara yumuşatma ekledik */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mapContainer {
+  flex: 1;
+  width: 50%;
+  padding-right: 10px;
+  border-radius: 0;
+  height: 400px; /* Harita alanını 500px yüksekliğinde ayarladık */
+  margin-top: 20px; /* Listenin üzerinden 20px aşağıya kaydırdık */
+}
+
+
+.info .accordion-header {
+  background-color: #eff0f3;
+  color: #0d0d0d;
+  font-family: 'Poppins', sans-serif; /* Poppins fontunu ekledik */
+}
+
+.info .accordion-body {
+  color: #0d0d0d;
+  font-family: 'Poppins', sans-serif; /* Poppins fontunu ekledik */
+}
+
+.info .accordion-body strong {
+  color: #ff8e3c;
+  font-family: 'Poppins', sans-serif; /* Poppins fontunu ekledik */
+}
+
+.faqButton {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ff8e3c; /* Değişiklik */
+  border-radius: 5px;
+  padding: 10px 20px; 
+  background-color: #ff8e3c; /* Değişiklik */
+  color: #eff0f3;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  width: auto;
+  white-space: nowrap; /* Metnin alt satıra geçmesini engeller */
+  text-align: center; /* Metni yatay olarak ortala */
+  display: block; /* Flex konteyner olarak ayarla */
+  align-items: center; /* Dikey hizalamayı sağla */
+  justify-content: center; /* Yatay hizalamayı sağla */
+  font-weight: 550; /* Kalınlaştırma eklendi */
+}
+
+.faqButton:hover {
+  background-color: #eff0f3;
+  color: #ff8e3c; /* Değişiklik */
+  font-weight: 700;
+}
+
+.addressContainer {
+  display: flex;
+  align-items: baseline;
+  margin-top: 10px; /* Adres ile diğer içerikler arasında bir boşluk bıraktık */
+  margin-bottom: 10px;
+}
+
+.locationIcon {
+  font-size: 20px;
+  color: #ff8e3c;
+  margin-right: 10px; /* Konum sembolü ile adres arasında bir boşluk bıraktık */
+  vertical-align: middle; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.addressText {
+  font-family: 'Poppins', sans-serif; /* Yazı tipini Poppins olarak ayarladık */
+  color: #0d0d0d;
+  display: inline-block;
+  font-size: 16px; /* Yazı boyutunu ayarladık */
+
+}
+
+.listContainer {
+  font-family: 'Poppins', sans-serif; /* Yazı tipini Poppins olarak ayarladık */
+  color:#0d0d0d;
+  font-weight: bold; /* Kalın font */
+  margin-top: 0;
+}

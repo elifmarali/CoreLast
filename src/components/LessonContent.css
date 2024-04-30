@@ -1,0 +1,112 @@
+.lessonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background-color: #fffffe;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.contentHeader {
+  width: 70vw;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 26px;
+  color: #0d0d0d;
+  padding: 0 20px;
+}
+
+.contentMain {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #eff0f3;
+  padding: 20px;
+  gap: 20px;
+}
+
+.contentMainHead {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0d0d0d;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+
+}
+.video {
+  height: 400px;
+  width: 100%;
+}
+
+  
+  .contentImage {
+    width: 400px;
+    height: 270px;
+  }
+  
+  .contentText {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  
+  .firstTenSentences {
+    margin-bottom: 10px;
+  }
+
+
+  .contentLessonText{
+color: #2a2a2a;
+font-size: 18px;
+line-height: 1.4;
+  }
+  
+  @media (max-width: 1100px) {
+    .contentText {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .contentImage {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .lessonButtonContainer{
+    width: 70vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .contentLessonButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ff8e3c;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 40px;
+  }
+
+  
+.contentLessonIcon{
+  color: #d9376e;
+  font-size: 20px;
+  transition: 300ms all;
+}
+
+.contentLessonButton:hover .contentLessonIcon{
+
+     transform:translateX(10px) 
+}

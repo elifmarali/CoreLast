@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+
+.registerMain {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-position: right;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerSection {
+    width: 450px;
+    height: 540px;
+    background: hsla(212, 35%, 58%, 1);
+
+    background: linear-gradient(90deg, #f5f5f5 0%, #eff0f3 100%);
+
+    background: -moz-linear-gradient(90deg, #f5f5f5 0%, #eff0f3 100%);
+
+    background: -webkit-linear-gradient(90deg, #f5f5f5 0%, #eff0f3 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#6D90B9", endColorstr="#BBC7DC", GradientType=1);
+    border-radius: 5px;
+    /* padding: 3vw; */
+    padding : 30px;
+    flex-direction: column;
+    text-align: center;
+
+    /* Değişti */
+}
+
+.topSection {
+    color: #021B35;
+    /* Kayıt ol yazısı */
+    font-size: 20px;
+    word-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.topSection>span {
+    color: #ff8e3c;
+    /* Kayıt ol yazısı */
+}
+
+.inputBox {
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    width: 370px;
+    margin-bottom: 40px;
+    /* Değişti */
+}
+
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #817c7c;
+    /* Inputların satır rengi */
+    outline: none;
+    color: #312d29b6;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+}
+
+.inputBox input:focus {
+    border-bottom: 2px solid #ff8e3c;
+    font-weight: 700;
+    /* Input satırlarıyla etkileşime geçince olan renk */
+}
+
+.inputBox label {
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    color: #817c7c;
+    /* Input yazılarırının rengi */
+    text-transform: uppercase;
+}
+
+.inputBox label span {
+    position: relative;
+    display: inline-flex;
+    letter-spacing: 0.05em;
+    transition: letter-spacing 0.2s ease-in-out;
+}
+
+.inputBox:focus-within label span,
+.inputBox input:valid~label span {
+    text-shadow: 1px 1px 1px #ff8e3c;
+    /* Input belirteç yazılarının gölgelendirmesi */
+    color: #ff8e3c;
+    /* Input belirteç yazıları, içi doluyken olan rengi */
+    letter-spacing: 0.15em;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-25px);
+}
+
+
+.inputBox input[type="submit"] {
+    background: orange;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    color: #1c2630;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+    letter-spacing: 0.35em;
+}
+
+.registerButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.registerButton {
+    cursor: pointer;
+    margin-top: 10px;
+    color: #EEEDED;
+    /* Kayıt Ol Yazısı */
+    background-color: #ff8e3c;
+    /* Buton Rengi */
+    border: none;
+    height: 50px;
+    width: 47vh;
+    border-radius: 4px;
+    transition: 500ms all;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.registerButton:hover {
+    color: #ff8e3c;
+    background-color: #EEEDED;
+    /* Buton efekti */
+}
+.navigateSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #021B35;
+    font-size: smaller;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.navigateSection button{
+    border: none;
+    background-color: transparent;
+    color:#ff8e3c;
+    /* En Alttaki giriş yap yazısı */
+    font-size: 16px;
+    font-weight: 600;
+}
