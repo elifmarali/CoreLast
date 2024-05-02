@@ -7,10 +7,18 @@ import "./LessonContent.css";
 import { FaCaretRight } from "react-icons/fa";
 
 function LessonContent() {
-  const { selectedLesson, selectedLessonInfo, setSelectedLesson } =
+  const { selectedLesson, selectedLessonInfo, setSelectedLesson,lesson } =
     useContext(LessonsContext);
   const [loading, setLoading] = useState(true);
   const { educationId } = useParams();
+  const [editedUrl,setEditedUrl]= useState();
+  useEffect(() => {
+    if(selectedLessonInfo && selectedLessonInfo.videoUrl) {
+      const videoId = selectedLessonInfo.videoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/)[1];
+      const embedUrl = `https://www.youtube.com/embed/${videoId}?si=okDGIm8l9L8XQHil`;
+      setEditedUrl(embedUrl);
+    }
+  }, [selectedLessonInfo]);
 
   useEffect(() => {
     setSelectedLesson(educationId);
@@ -48,7 +56,7 @@ function LessonContent() {
               </h3>
               <div className="videoContainer">
                 <iframe
-                  src={selectedLessonInfo?.videoUrl}
+                  src={editedUrl}
                   className="video"
                 ></iframe>
               </div>
