@@ -76,17 +76,10 @@ function Profile() {
         textY += lineHeight;
       });
 
- const supervisorName = "TEDDY YU"; 
- const managerName = "DREW FEIĞ";
- ctx.font = "24px  Italic "; 
- ctx.fillStyle = "#000"; 
- ctx.fillText(`Supervisor`, 300, 550);
- ctx.font = "16px Italic";
- ctx.fillText(`${supervisorName}`, 300, 570);
- ctx.font = "24px Italic "; 
- ctx.fillText(`Manager`, 600, 550);
- ctx.font = "16px Italic";
- ctx.fillText(` ${managerName}`, 600, 570);
+      const managerName = "CoreCampus Ekibi";
+      ctx.font = "22px  Italic"; 
+      ctx.fillStyle = "#000"; 
+      ctx.fillText(` ${managerName}`, 600, 570);
 
 
       const downloadBtn = document.createElement("a");
