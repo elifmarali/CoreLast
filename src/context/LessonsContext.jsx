@@ -10,17 +10,40 @@ function LessonsProvider({ children }) {
   const [lessonGroup, setLessonGroup] = useState([]);
   const [selectedLesson, setSelectedLesson] = useState();
   const [selectedLessonInfo, setSelectedLessonInfo] = useState();
+  const [time, setTime] = useState();
+  const [selectedStars, setSelectedStars] = useState(0);
+  const [star, setStar] = useState();
   useEffect(() => {
-    if (currentUser) {
-      getLessonsData();
-    }
-  }, [currentUser]);
+    getLessonsData();
+  }, []);
 
   useEffect(() => {
     if (selectedLesson !== undefined) {
       getSelectedLessonInfo();
+      getTimeInfo();
+      getStar(selectedLesson);
     }
   }, [selectedLesson]);
+
+  const getTimeInfo = async () => {
+    try {
+      const response = await axios.get(
+        `https://localhost:44309/api/Education/getVideoTimeById?id=${selectedLesson}`
+      );
+      const timeInfo = response.data.data;
+
+      if (timeInfo) {
+        let timeCalc = timeInfo.split(":");
+        let hours = parseInt(timeCalc[0]);
+        let minutes = parseInt(timeCalc[1]);
+        let seconds = parseInt(timeCalc[2]);
+        let totalTimeInMillis = (hours * 3600 + minutes * 60 + seconds) * 1000;
+        setTime(totalTimeInMillis);
+      }
+    } catch (err) {
+      console.error("Error fetching time info data:", err);
+    }
+  };
 
   const getLessonsData = async () => {
     try {
@@ -37,7 +60,7 @@ function LessonsProvider({ children }) {
   };
 
   const groupLessonsByContentName = (lessons) => {
-    const groupedLessons = [];
+    const groupedLessons = {};
 
     lessons.forEach((lesson) => {
       const { contentName, ...rest } = lesson;
@@ -64,12 +87,57 @@ function LessonsProvider({ children }) {
     }
   };
 
+  const assessmentMade = (stars) => {
+    axios
+      .post(
+        `https://localhost:44309/api/Education/vote?educationId=${selectedLesson}&vote=${stars}`,
+        {
+          educationId: selectedLesson,
+          vote: stars,
+        }
+      )
+      .then((response) => {
+        if (response) {
+          console.log(response);
+        }
+        return response.data;
+      });
+  };
+
+  const getStar = async (id) => {
+    try {
+      const response = await axios.get(
+        `https://localhost:44309/api/Education/getVote?id=${id}`
+      );
+      if (response.data.data === 0) {
+        setStar(0);
+      } else {
+        setStar(response.data.data);
+      }
+    } catch (err) {
+      if (err.response && err.response.status === 400) {
+        // Eğer 400 hatası alınırsa, 0 olarak ayarla
+        setStar(0);
+      } else {
+        // Diğer hata durumlarını işle
+      }
+    }
+  };
+  
+  
+
   const data = {
     lessons,
     lessonGroup,
     selectedLesson,
     setSelectedLesson,
     selectedLessonInfo,
+    time,
+    assessmentMade,
+    selectedStars,
+    setSelectedStars,
+    star,
+    getStar
   };
 
   return (

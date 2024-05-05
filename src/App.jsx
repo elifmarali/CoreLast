@@ -17,6 +17,7 @@ import Profile from "./components/Profile";
 import FAQ from "./components/FAQ";
 import Lessons from "./components/Lessons";
 import LessonContent from "./components/LessonContent";
+import LessonAssessment from "./components/LessonAssessment";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/user/:userID" element={<Profile/>}></Route>
         <Route path="/lessons" element={<Lessons/>}></Route>
         <Route path="/lessonContent/:educationId" element={<LessonContent/>}></Route>
+        <Route path="/lessonAssessment/:educationId" element={<LessonAssessment/>}></Route>
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </Router>
