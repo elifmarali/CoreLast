@@ -64,7 +64,7 @@
 .starsContainer {
     display: flex;
     font-size: 50px;
-    gap: 10px;
+    gap: 26px;
 }
 
 .star {

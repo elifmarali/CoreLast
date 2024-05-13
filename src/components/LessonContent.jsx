@@ -27,7 +27,7 @@ function LessonContent() {
 
   useEffect(() => {
     if (selectedLessonInfo && selectedLessonInfo.videoUrl) {
-      const videoId = selectedLessonInfo.videoUrl.match(
+      const videoId = selectedLessonInfo?.videoUrl.match(
         /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/
       )[1];
       const embedUrl = `https://www.youtube.com/embed/${videoId}?si=okDGIm8l9L8XQHil`;
