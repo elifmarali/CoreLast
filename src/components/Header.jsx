@@ -9,25 +9,27 @@ import logo from '../images/LOGO-3.webp';
 const Header = () => {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser,currentUserId,setCurrentUserId,currentUserPointsData,setCurrentUserPointsData} = useContext(AuthContext);
-  const { allExams, clickExam } = useContext(ExamsContext);
+  const { allExams, clickExam,setExamId,setQuestionName,examId ,fetchStars} = useContext(ExamsContext);
 
   useEffect(() => {
     const username = AuthService.getUsernameFromToken();
     setCurrentUser(username);
   }, []);
 
-
-
+  
 
   const handleClickExam = (exam,examId) => {
     if (currentUser) {
       const { examName } = exam;
-
       if (currentUserPointsData && currentUserPointsData[examName] !== undefined) {
         // Eğer kullanıcı daha önce bu sınava girdiyse
+        setQuestionName(examName);
+        setExamId(examId)
         navigate(`/result/${currentUserId}/${examName}`);
       } else {
         // Eğer kullanıcı daha önce bu sınava girmediyse
+        setExamId(examId);
+        setQuestionName(examName);
         clickExam(examId);
         navigate("/questionInfo");
       }
@@ -35,6 +37,12 @@ const Header = () => {
       navigate("/login");
     }
   };
+
+  const handleExamTab = ()=>{
+    fetchStars(allExams);
+      navigate("/examsPage")
+  }
+
   const handleLogout = () => {
     AuthService.logout();
     setCurrentUser(null);
@@ -56,7 +64,7 @@ const Header = () => {
             <button onClick={() => navigate("/lessons")} className="nav-link">Eğitimler</button>
           </li>
           <li className="nav-item">
-            <button onClick={() => navigate("/examsPage")} className="nav-link">
+            <button onClick={() => {handleExamTab()}} className="nav-link">
               Sınavlar
             </button>
             <div className="submenu">

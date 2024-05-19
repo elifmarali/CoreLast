@@ -2,17 +2,22 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Result.css";
 import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import ExamsContext from "../context/ExamsContext";
 
 function Result() {
   const { userID, examName } = useParams();
-  const { currentUserPointsData, currentUser } = useContext(AuthContext);
+  const { currentUserPointsData, currentUser,setIsExams } = useContext(AuthContext);
   const [examScore, setExamScore] = useState();
   const navigate = useNavigate();
+  const {examId,setQuestionName}=useContext(ExamsContext);
+  
+
 
   useEffect(() => {
     const fetchData = async () => {
       const score = await currentUserPointsData[examName];
       setExamScore(score);
+      setIsExams(true);
     };
 
     fetchData();
@@ -75,6 +80,12 @@ function Result() {
 
     document.body.appendChild(canvas);
   };
+
+  const clickAssesmentExams = (examId)=>{
+    setQuestionName(examName);
+    setIsExams(true);
+    navigate(`/assessment/${examId}`);
+  }
   
 
   return (
@@ -101,6 +112,9 @@ function Result() {
         <div className="resultButtonContainer">
           <button onClick={() => navigate("/")} className="backHomeButton">
             Ana Sayfaya Geri Dön
+          </button>
+          <button onClick={() => clickAssesmentExams(examId)} className="backHomeButton">
+            Sınavı Değerlendir
           </button>
         </div>
       </section>

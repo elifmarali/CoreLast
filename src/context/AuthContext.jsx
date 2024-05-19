@@ -4,6 +4,7 @@ import AuthService from "../services/authServices";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [isExams,setIsExams]=useState();
   const [currentUser, setCurrentUser] = useState(null);
   const [currentUserId, setCurrentUserId] = useState(null);
   const [currentUserPointsData, setCurrentUserPointsData] = useState({});
@@ -23,7 +24,6 @@ export const AuthProvider = ({ children }) => {
   }, [currentUser]);
 
 
-
   const sharedValuesAndMethods = {
     currentUser,
     setCurrentUser,
@@ -31,6 +31,7 @@ export const AuthProvider = ({ children }) => {
     setCurrentUserId,
     currentUserPointsData,
     setCurrentUserPointsData,
+    isExams,setIsExams
   };
 
 

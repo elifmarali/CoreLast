@@ -41,6 +41,8 @@ function Home() {
   const { currentUserPointsData, currentUser } = useContext(AuthContext);
   const [formattedName, setFormattedName] = useState("");
 
+
+
   useEffect(() => {
     AOS.init({ duration: "700" });
   }, []);
@@ -367,7 +369,7 @@ function Home() {
           {currentUser ? (
             <>
               <div className="promationSectionText">
-                Merhaba, {formattedName}! CoreQuiz'e hoş geldiniz.
+                Merhaba, {formattedName}! CoreCampus'e hoş geldiniz.
               </div>
               <button
                 className="promationSectionButton"

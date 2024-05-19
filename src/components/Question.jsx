@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ExamsContext from "../context/ExamsContext";
 import "./Question.css";
 import { useNavigate, useParams } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 function Question() {
   const { questionID, examID } = useParams();
@@ -31,6 +32,7 @@ function Question() {
     setQuestionLastIndex,
     setQuestionIdArray
   } = useContext(ExamsContext);
+  const {setIsExams}=useContext(AuthContext);
   const [minute, setMinute] = useState(40);
   const [second, setSecond] = useState(0);
 
@@ -109,9 +111,11 @@ function Question() {
     answerPost(examId, questionIndex, selectedAnswer, currentUserId);
     setMinute(0);
     setSecond(0);
+    setIsExams(true);
     navigate(`/result/${currentUserId}/${questionName}`);
     setCurrentQuestion(1);
 setQuestionThis(null);
+
   };
   
 

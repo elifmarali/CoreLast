@@ -116,7 +116,6 @@ function LessonsProvider({ children }) {
       }
     } catch (err) {
       if (err.response && err.response.status === 400) {
-        // Eğer 400 hatası alınırsa, 0 olarak ayarla
         setStar(0);
       } else {
         // Diğer hata durumlarını işle

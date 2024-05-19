@@ -14,17 +14,18 @@
   width: 70vw;
   padding: 0 10px;
 justify-content: flex-end;
+
 }
 
 .star {
   width: 35px; /* A star's size */
   height: 35px; /* A star's size */
   background-size: contain;
-  background-image: url('/path/to/star-filled.svg'); /* Filled star image */
+  color: #00000037;
 }
 
 .selected {
-  background-image: url('/path/to/star-filled.svg'); /* Filled star image */
+  color: #ff8e3c;
 }
 
 .contentHeader {

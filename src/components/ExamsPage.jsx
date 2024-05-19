@@ -4,23 +4,25 @@ import ExamsContext from "../context/ExamsContext";
 import "./ExamsPage.css";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons"; // Import regularStar icon
 
 function ExamsPage() {
   const navigate = useNavigate();
-  const { allExams, clickExam, setCurrentQuestion, currentUserId } =
-    useContext(ExamsContext);
+  const { allExams, clickExam, setCurrentQuestion, currentUserId, setExamId, setQuestionName, examStars, fetchStars } = useContext(ExamsContext);
   const { currentUser, currentUserPointsData } = useContext(AuthContext);
 
-  const handleClickExam = (exam, examId) => {
+  const handleClickExam = async (exam, examId) => {
     if (currentUser) {
       const { examName } = exam;
-      if (
-        currentUserPointsData &&
-        currentUserPointsData[examName] !== undefined
-      ) {
+      if (currentUserPointsData && currentUserPointsData[examName] !== undefined) {
+        setExamId(examId);
+        setQuestionName(examName);
         navigate(`/result/${currentUserId}/${examName}`);
       } else {
-        clickExam(examId);
+        setExamId(examId);
+        setQuestionName(examName);
+        await clickExam(examId);
         navigate("/questionInfo");
       }
     } else {
@@ -28,24 +30,49 @@ function ExamsPage() {
     }
   };
 
+  const renderStars = (examId) => {
+    const starCount = examStars[examId] || 0;
+
+    if (starCount === 0) {
+      return <p>Henüz değerlendirme yapılmamıştır</p>;
+    }
+
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={i <= starCount ? "star selected" : "star"}>
+          <FontAwesomeIcon icon={regularStar} />
+        </span>
+      );
+    }
+    return <div style={{ display: "flex" }}>{stars}</div>;
+  };
+
   return (
     <div className="examsContainer">
       <Header />
-      {allExams !== null && allExams !== undefined ? (
+     <div className="exams">
+     {allExams !== null && allExams !== undefined ? (
         allExams.map((exam) => (
-          <button
-            className="exam"
-            key={exam.id}
-            onClick={() => {
-              handleClickExam(exam, exam.id);
-            }}
-          >
-            {exam.examName}{" "}
-          </button>
+          <div key={exam.id} className="examItem">
+            <button
+              className="exam"
+              onClick={() => {
+                handleClickExam(exam, exam.id);
+              }}
+            >
+              <div>{exam.examName}</div>
+              <div className="examStars">
+              {renderStars(exam.id)}
+            </div>
+            </button>
+
+          </div>
         ))
       ) : (
         <div>Yükleniyor...</div>
       )}
+     </div>
     </div>
   );
 }

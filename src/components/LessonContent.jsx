@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons"; // Import regularStar icon
+import AuthContext from "../context/AuthContext";
 
 function LessonContent() {
   const {
@@ -19,6 +20,7 @@ function LessonContent() {
     star,
     getStar,
   } = useContext(LessonsContext);
+  const {setIsExams}=useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const { educationId } = useParams();
   const [editedUrl, setEditedUrl] = useState();
@@ -38,6 +40,7 @@ function LessonContent() {
   useEffect(() => {
     setSelectedLesson(educationId);
     getStar(selectedLesson);
+    setIsExams(false);
   }, [educationId]);
 
   useEffect(() => {
@@ -50,13 +53,14 @@ function LessonContent() {
         setActive(true);
       }, time);
 
-      return () => clearTimeout(timeout); // Temizleme işlevi
+      return () => clearTimeout(timeout); 
     }
   }, [time]);
 
   const lessonComplatedClick = (educationId) => {
     if (active) {
-      nav(`/lessonAssessment/${educationId}`);
+      setIsExams(false);
+      nav(`/assessment/${educationId}`);
     } else {
       toast.error(
         "Eğitimi değerlendirebilmeniz için en az eğitimdeki video içeriği kadar zaman geçirmiş olmalısınız."
@@ -73,7 +77,7 @@ function LessonContent() {
     for (let i = 1; i <= 5; i++) {
       stars.push(
         <span key={i} className={i <= star ? "star selected" : "star"}>
-          <FontAwesomeIcon icon={regularStar} />
+          <FontAwesomeIcon icon={regularStar}  />
         </span>
       );
     }
