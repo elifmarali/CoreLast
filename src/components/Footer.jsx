@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faGoogle, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import "./Footer.css";
+import ThemeContext from "../context/ThemeContext";
 
 function Footer() {
     const navigate = useNavigate();
+    const {theme} =useContext(ThemeContext);
     return (
-<div className="footer">
+<div className={`footer ${theme ==="dark" ? theme : ""}`}>
     <ul className="footerOptions">
 
           <li className="footerOption">

@@ -7,13 +7,18 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background: #fef1f0; /* Değişiklik */
-    color: #0d0d0d; /* Değişiklik */
+    background: #fef1f0;
+    color: #0d0d0d;
     margin: 0px;
     overflow: visible;
     height: 100px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     padding: 20px 40px;
+}
+
+.header.dark {
+    background: #333;
+    color: #fff;
 }
 
 .logo {
@@ -22,23 +27,27 @@
     text-align: left;
     display: flex;
     align-items: center;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .logo img {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Gölge efekti */
-    border-radius: 10px; /* İsteğe bağlı olarak kenar yuvarlatma */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
 .ad-text {
-    margin-left: 20px; 
-    margin-top: 0; /* Yukarıdaki boşluğu sıfıra ayarlar */
-    margin-bottom: 0; /* Aşağıdaki boşluğu sıfıra ayarlar */
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
     color: #0d0d0d;
     font-weight: 600;
     font-size: 16px;
-    align-self: center; 
-    margin-right: 20px; 
+    align-self: center;
+    margin-right: 20px;
+}
+
+.ad-text.dark {
+    color: #fff;
 }
 
 .nav-list {
@@ -64,12 +73,15 @@
     padding: 5px 10px;
     background: none;
     border: none;
-    color: #0d0d0d; /* Değişiklik */
     cursor: pointer;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
     font-weight: 600;
+}
+
+.nav-link.dark {
+    color: #fff !important;
 }
 
 .nav-link:hover {
@@ -86,7 +98,6 @@
     width: 120px;
     left: 5%;
     top: 80%;
-    
 }
 
 .nav-item:hover .submenu {
@@ -118,8 +129,9 @@
     align-items: center;
     padding: 4px;
 }
+
 .nav-item:hover .nav-link {
-    color: #ff8e3c; /* Değişiklik */
+    color: #ff8e3c;
 }
 
 .submenu a:hover {
@@ -133,50 +145,51 @@
 
 .nav-button {
     font-family: 'Poppins', sans-serif;
-    border: 1px solid #ff8e3c; /* Değişiklik */
+    border: 1px solid #ff8e3c;
     border-radius: 5px;
-    padding: 10px 20px; 
-    background-color: #ff8e3c; /* Değişiklik */
+    padding: 10px 20px;
+    background-color: #ff8e3c;
     color: #eff0f3;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     width: 90px;
-    white-space: nowrap; /* Metnin alt satıra geçmesini engeller */
-    text-align: center; /* Metni yatay olarak ortala */
-    display: flex; /* Flex konteyner olarak ayarla */
-    align-items: center; /* Dikey hizalamayı sağla */
-    justify-content: center; /* Yatay hizalamayı sağla */
-    font-weight: 550; /* Kalınlaştırma eklendi */
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 550;
 }
 
 .nav-button:hover {
     background-color: #eff0f3;
-    color: #ff8e3c; /* Değişiklik */
+    color: #ff8e3c;
     font-weight: 700;
 }
 
 .nav-button:active {
-    transform: translateY(10px); /* Aktif durumda butonu biraz aşağı it */
+    transform: translateY(10px);
 }
 
 .nav-button span {
-    vertical-align: middle; /* Metni düşey olarak ortalar */
+    vertical-align: middle;
 }
 
-.userOptions{
+.userOptions {
     position: relative;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
+    align-items: center;
 }
 
-.logOutButton{
+.logOutButton {
     display: none;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border: 1px solid #ff8e3c; /* Değişiklik */
-    color: #ff8e3c; /* Değişiklik */
+    border: 1px solid #ff8e3c;
+    color: #ff8e3c;
     transition: 300ms all;
     width: 150px;
     height: 40px;
@@ -185,22 +198,46 @@
     font-size: 16px;
 }
 
-.userOptions:hover .logOutButton{
-    display:flex;
+.userOptions:hover .logOutButton {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logOutButton:hover{
+.logOutButton:hover {
     background-color: #f6f5f5;
-    color: #ff8e3c; /* Değişiklik */
+    color: #ff8e3c;
     font-weight: 600;
     transition: 300ms all;
 }
 
-.userOptionsFullName{
-    color: #ff8e3c; /* Değişiklik */
+.userOptionsFullName {
+    color: #ff8e3c;
     font-weight: 600;
     text-transform: capitalize;
 }
 
+.themeContainer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8e3c;
+    border-radius: 50%;
+}
+
+.themeContainer.dark {
+    background-color: #333;
+}
+
+.themeIcon {
+    display: flex;
+    justify-content: end;
+    color: #fff;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 300ms all;
+    font-weight: 900;
+}

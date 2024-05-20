@@ -4,7 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #0d0d0d !important;
 
+}
+.footer.dark{
+    background-color:#333 ;
+    color: #fff;
 }
 
 .footerOptions {

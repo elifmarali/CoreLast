@@ -40,7 +40,7 @@ function Communicate() {
       <div className='containerMap'>
         <div className="mapAndListContainer">
           <div className="mapContainer">
-            <LoadScript googleMapsApiKey="AIzaSyCMzHtFT3LUWzZUTe9Q8DC4vojTRarOFuc"> {/* API key'i kendinizle değiştirin */}
+            <LoadScript googleMapsApiKey="AIzaSyAxMZnrkcrMTD-68ZnLT88BxPsi0tu5lHo"> 
               <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 center={position}

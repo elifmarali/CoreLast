@@ -7,6 +7,36 @@
   align-items: center;
   background-color: #fef1f0;
 }
+.homeContainer.dark,
+.homeLessonExamContainer.dark,
+.whyChooseUs.dark{
+  background-color: #333;
+}
+.main.dark{
+  background-color: #565656;
+}
+.promationSectionButton.dark{
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .contentHead,
+.dark .contentSubtitle,
+.dark .contentDescription,
+.dark .whyHeader,
+.dark .whyItem, 
+.dark strong
+ {
+  color: #fff !important;
+}
+
+
+.dark .mainTitle,
+.dark .featureHeader,
+.dark .mainSubtitle {
+  color: #fff !important;
+}
+
 
 .home {
   min-height: 85vh;

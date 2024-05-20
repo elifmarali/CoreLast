@@ -36,11 +36,12 @@ import { AiOutlineExclamation } from "react-icons/ai";
 import examImage from "../usersPhoto/exam.jpg";
 import exam1Image from "../usersPhoto/lesson.jpg";
 import whyImage from "../usersPhoto/why.png";
+import ThemeContext from "../context/ThemeContext.jsx";
 function Home() {
   const navigate = useNavigate();
   const { currentUserPointsData, currentUser } = useContext(AuthContext);
   const [formattedName, setFormattedName] = useState("");
-
+const {theme}=useContext(ThemeContext);
 
 
   useEffect(() => {
@@ -64,7 +65,7 @@ function Home() {
     <div className="HomeContainer">
       <div className="topSectionHome">
         <Header />
-        <div className="homeContainer">
+        <div className={`homeContainer ${theme ==="dark" ? theme : ""}`}>
           <div className="home">
             <div className="content">
               <h2 className="contentHead">
@@ -105,7 +106,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="main">
+      <div className={`main ${theme==="dark" ? theme : ""}`}>
         <div className="mainTitle">
           <span className="mainLine" />
           Özelliklere Göz At
@@ -288,7 +289,7 @@ function Home() {
           </button>
         </div>
       </div>
-      <div className="homeLessonExamContainer">
+      <div className={`homeLessonExamContainer ${theme==="dark" ? theme : ""} `}>
         <div className="lessonExamTop">
           <div className="lessonExamTitle">
             <span className="mainLine" />
@@ -340,7 +341,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="whyChooseUs">
+      <div className={`whyChooseUs ${theme==="dark" ? theme : ""}`}>
         <div className="whyRightSection">
           <img src={whyImage} alt="why image" className="whyImage" />
         </div>
@@ -372,7 +373,7 @@ function Home() {
                 Merhaba, {formattedName}! CoreCampus'e hoş geldiniz.
               </div>
               <button
-                className="promationSectionButton"
+                className={`promationSectionButton ${theme==="dark" ? theme : ""}`}
                 onClick={() => navigate("/examsPage")}
               >
                 Hemen Sınavlara Göz Atın!
