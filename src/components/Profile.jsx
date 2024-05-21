@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import Header from "./Header";
 import "./Profile.css";
 import admin from "../usersPhoto/admin.png";
+import ThemeContext from "../context/ThemeContext";
 
 
 function Profile() {
@@ -11,6 +12,7 @@ function Profile() {
   const [formattedName, setFormattedName] = useState("");
   const [pointsData, setPointsData] = useState({});
   const [successExam, setSuccessExam] = useState(0);
+  const {theme}= useContext(ThemeContext);
 
   useEffect(() => {
     if (currentUser) {
@@ -96,7 +98,7 @@ function Profile() {
   return (
     <>
       <Header />
-      <div className="profileContainer">
+      <div className={`profileContainer ${theme ==="dark" ? theme : ""}`}>
         <div className="profile">
           <div className="profileImageContainer">
             <img src={admin} alt="" className="adminImage" />

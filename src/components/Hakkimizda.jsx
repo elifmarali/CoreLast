@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./Header";
 import "./Hakkimizda.css";
 import Footer from "./Footer";
@@ -9,9 +9,12 @@ import wrapping from "../image/3d-glassy-iridescent-connections-in-a-glass-molec
 import completion from "../image/ders-tamamlama.png"
 import success from "../image/sertifika.png"
 import {useSpring, animated} from "react-spring"; 
+import ThemeContext from "../context/ThemeContext";
 // npm i react-spring
 
+
 function Hakkimizda() {
+    const {theme}=useContext(ThemeContext);
 
     function Number({n}){
         const {number} = useSpring({

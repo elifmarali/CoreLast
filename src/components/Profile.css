@@ -5,6 +5,9 @@
     align-items: center;
 
 }
+.profileContainer.dark{
+  background-color: #565656;
+}
 .profile{
     display: flex;
     flex-direction: column;

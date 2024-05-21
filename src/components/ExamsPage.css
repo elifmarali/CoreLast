@@ -8,6 +8,7 @@ background-color: #fffffe;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 .examItem{
     width: 95%;
@@ -20,6 +21,10 @@ align-items: center;
     display: flex;
     flex-direction: column;
 align-items: center;
+height: 100%;
+}
+.exams.dark{
+    background-color: #56565691;
 }
 
 .exam {

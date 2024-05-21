@@ -13,7 +13,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.assessmentMain.dark{
+    background-color: #565656;
+}
 .assessmentSection {
     width: 400px;
     height: 270px;

@@ -4,6 +4,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.certificateCards.dark{
+  background-color: #565656;
+}
 
 @keyframes fadeInOut {
   0% {

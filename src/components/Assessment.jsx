@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import ExamsContext from "../context/ExamsContext";
 import AuthContext from "../context/AuthContext";
+import ThemeContext from "../context/ThemeContext";
 
 function Assessment() {
   const {
@@ -18,6 +19,7 @@ function Assessment() {
   const { questionName, assessmentMade: examAssessmentMade, examId,fetchStars,exams } = useContext(ExamsContext);
   const { isExams } = useContext(AuthContext);
   const[click,setClick]=useState(true);
+  const {theme}=useContext(ThemeContext);
 
   const nav = useNavigate();
 
@@ -59,7 +61,7 @@ function Assessment() {
   };
 
   return (
-    <main className="assessmentMain">
+    <main className={`assessmentMain ${theme==="dark" ? theme : ""}`}>
       <ToastContainer />
       <section className="assessmentSection">
         <div className="assessmentHeader">

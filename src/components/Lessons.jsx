@@ -7,12 +7,13 @@ import "./Lessons.css";
 
 import Footer from "./Footer";
 import { FaCaretRight } from "react-icons/fa";
+import ThemeContext from "../context/ThemeContext";
 
 function Lessons() {
   const { lessons, lessonGroup } = useContext(LessonsContext);
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
-
+const {theme}= useContext(ThemeContext);
   useEffect(() => {
     if (lessonGroup !== null && lessonGroup !== undefined) {
       setLoading(false);
@@ -30,7 +31,7 @@ function Lessons() {
   return (
     <>
       <Header />
-      <div className="lessons">
+      <div className={`lessons ${theme ==="dark" ?  theme : ""}`}>
         {loading ? (
           <div>Yukleniyor...</div>
         ) : (
@@ -38,7 +39,7 @@ function Lessons() {
             <div className="lesson" key={key}>
               <div className="lessonTopSection">
                 {" "}
-                <h2 className="lessonHeader">{key}</h2>
+                <h2 className={`lessonHeader ${theme ==="dark" ?  theme : ""}`}>{key}</h2>
                 {showAll && lessonGroup[key].length > 3 ? <button onClick={handleClickClose}>X</button> : ""}
               </div>
               <div className="lessonContainer" >

@@ -8,11 +8,11 @@
   background-color: #fef1f0;
 }
 .homeContainer.dark,
-.homeLessonExamContainer.dark,
-.whyChooseUs.dark{
+.homeLessonExamContainer.dark
+{
   background-color: #333;
 }
-.main.dark{
+.main.dark,.whyChooseUs.dark{
   background-color: #565656;
 }
 .promationSectionButton.dark{
@@ -25,7 +25,7 @@
 .dark .contentDescription,
 .dark .whyHeader,
 .dark .whyItem, 
-.dark strong
+.dark .homeStrong
  {
   color: #fff !important;
 }

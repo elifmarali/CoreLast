@@ -3,6 +3,7 @@ import "./Result.css";
 import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import ExamsContext from "../context/ExamsContext";
+import ThemeContext from "../context/ThemeContext";
 
 function Result() {
   const { userID, examName } = useParams();
@@ -10,7 +11,7 @@ function Result() {
   const [examScore, setExamScore] = useState();
   const navigate = useNavigate();
   const {examId,setQuestionName}=useContext(ExamsContext);
-  
+  const {theme}=useContext(ThemeContext);
 
 
   useEffect(() => {
@@ -89,7 +90,7 @@ function Result() {
   
 
   return (
-    <main className="resultMain">
+    <main className={`resultMain ${theme==="dark" ? theme : ""}`}>
       <section className="resultSection">
         <div className="resultHeader">{examName} Sınavı</div>
         {examScore !== undefined ? (

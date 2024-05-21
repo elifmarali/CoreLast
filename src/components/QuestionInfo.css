@@ -20,6 +20,9 @@
   color: aliceblue;
   font-weight: 700;
 }
+.head.dark{
+  color: #0d0d0d;
+}
 .questionInfoSection {
   display: flex;
   justify-content: start;
@@ -29,6 +32,10 @@
   height: 60vh;
   width: 70vw;
   padding: 20px 60px;
+}
+.questionInfoSection.dark{
+  background-color: #565656;
+
 }
 .cizgi {
   border: 0.4px solid lightgray;
@@ -40,6 +47,9 @@
   font-size: 70px;
   font-weight: 500;
   color: #0d0d0d;
+}
+.questionInfoLeftSectionHeader.dark{
+  color: #fff;
 }
 .questionInfoRightSection {
   width: 30vw;
@@ -63,6 +73,13 @@
 }
 .rightSectionItemfs{
   font-size: 14px;
+}
+.rightSectionItem.dark{
+  color: #ffffff84;
+}
+
+.rightSectionItemfs.dark{
+  color: #fff;
 }
 .questionInfoButton {
   background-color: #0d0d0d;

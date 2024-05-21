@@ -5,10 +5,12 @@ import ExamsContext from "../context/ExamsContext";
 import "./Question.css";
 import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import ThemeContext from "../context/ThemeContext";
 
 function Question() {
   const { questionID, examID } = useParams();
   const navigate = useNavigate();
+  const {theme}=useContext(ThemeContext);
   const {
     questionName,
     questions,
@@ -120,10 +122,10 @@ setQuestionThis(null);
   
 
   return (
-    <div className="questionContainer">
+    <div className={`questionContainer ${theme ==="dark" ? theme : ""}`}>
       <ToastContainer />
       <div className="questionHeaderAndTimer">
-        <h3 className="questionHeader">
+        <h3 className={`questionHeader ${theme ==="dark" ? theme : ""}`}>
           {questionName} {currentQuestion} \ {questionLastIndex}
         </h3>
         <div className="timeSection">

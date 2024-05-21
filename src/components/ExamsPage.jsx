@@ -6,12 +6,13 @@ import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons"; // Import regularStar icon
+import ThemeContext from "../context/ThemeContext";
 
 function ExamsPage() {
   const navigate = useNavigate();
   const { allExams, clickExam, setCurrentQuestion, currentUserId, setExamId, setQuestionName, examStars, fetchStars } = useContext(ExamsContext);
   const { currentUser, currentUserPointsData } = useContext(AuthContext);
-
+const {theme}=useContext(ThemeContext);
   const handleClickExam = async (exam, examId) => {
     if (currentUser) {
       const { examName } = exam;
@@ -51,7 +52,7 @@ function ExamsPage() {
   return (
     <div className="examsContainer">
       <Header />
-     <div className="exams">
+     <div className={`exams ${theme==="dark" ? theme : ""}`}>
      {allExams !== null && allExams !== undefined ? (
         allExams.map((exam) => (
           <div key={exam.id} className="examItem">

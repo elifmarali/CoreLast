@@ -7,6 +7,14 @@
   align-items: center;
   gap: 20px;
 }
+.lessons.dark{
+  background-color: #565656;
+    color: #fff;
+}
+.dark.lessonHeader{
+  color: #fff;
+
+}
 .lesson {
   padding: 10px;
 }

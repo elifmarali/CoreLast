@@ -1,8 +1,16 @@
+.sssContainer{
+height: 78vh;
+padding: 20px;
+}
+.sssContainer.dark{
+    background-color: #565656;
+ 
+}
+
 .titleContainer{
     height: 20vh;
     display: flex;
     padding: 40px;
-    margin: 10px;
     background-color: #FEF1F0;
     align-items: center;
     justify-content:center; 
@@ -16,8 +24,6 @@
     text-shadow: 2px 22px 8px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 }
-
-
 
 
 .AccordionHeader{

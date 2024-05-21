@@ -2,16 +2,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./Certificate.css";
 import { Carousel, CarouselItem } from 'react-bootstrap';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // Sertifika resimlerini içeren bir dizi
 import sertifika1 from "../image/sertıfıka1.jpg";
 import sertifika2 from "../image/sertıfıka3.jpg";
 import sertifika3 from "../image/sertıfıka2.jpg";
+import ThemeContext from "../context/ThemeContext";
 
 function Certificate() {
   const [index, setIndex] = useState(0);
-
+const {theme}=useContext(ThemeContext);
   // Metinler dizisi
   const descriptions = [
     "Sorular, temel algoritma ve programlama konularını içermektedir. Sorularla ilgili küçük ipuçları verelim; İlk soru, algoritmanın temelini oluşturan adımların yazılmasıyla ilgilidir. İkinci soru, algoritma, programlama ve kodlama arasındaki farkları anlama üzerine odaklanmaktadır. Diğer sorular, problem tanımlama, algoritma yazma aşamaları, mantıksal operatörlerin kullanımı, değişkenlerin işlevi, koşullu ifadeler ve programlama temelleriyle ilgilidir. Soruların genel amacı, temel bilgisayar bilimleri konularında anlayışınızı ölçmektir.",
@@ -35,7 +36,7 @@ function Certificate() {
   return (
     <div className="CertificateContainer">
       <Header />
-      <div className="certificateCards">
+      <div  className={`certificateCards ${theme ==="dark" ?  theme : ""}`}>
         <div className="certificateCard">
           <div className="certficate">
             <div className="certificateRightSection">

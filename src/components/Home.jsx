@@ -350,16 +350,16 @@ const {theme}=useContext(ThemeContext);
           <ul className="whyList">
             <span className="whySpan" />
             <li className="whyItem">
-              <strong>Uzman İçerikler:</strong> Alanında uzman eğitmenlerimiz
+              <strong className="homeStrong">Uzman İçerikler:</strong> Alanında uzman eğitmenlerimiz
               tarafından hazırlanan içeriklerle kendinizi geliştirin.
             </li>
             <li className="whyItem">
-              <strong>Kapsamlı Kaynaklar:</strong> Geniş kütüphanemizdeki
+              <strong className="homeStrong">Kapsamlı Kaynaklar:</strong> Geniş kütüphanemizdeki
               eğitimler ve sınav hazırlıkları ile ihtiyacınız olan her şeye
               erişin.
             </li>
             <li className="whyItem">
-              <strong>Esneklik:</strong> İstediğiniz zaman, istediğiniz yerden
+              <strong className="homeStrong">Esneklik:</strong> İstediğiniz zaman, istediğiniz yerden
               erişebilme olanağıyla öğrenmeyi kolaylaştırın.
             </li>
           </ul>

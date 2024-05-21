@@ -10,6 +10,9 @@ background-color: #eff0f3;
   flex-direction: column;
   padding:80px 150px;
 }
+.questionContainer.dark{
+  background-color: #565656;
+}
 .questionHeaderAndTimer{
   display: flex;
   width: 50vw;
@@ -19,6 +22,9 @@ background-color: #eff0f3;
 .questionHeader{
   color: #2a2a2a;
   font-weight: 700;
+}
+.questionHeader.dark{
+  color: #fff;
 }
 .timeSection{
   background-color: #2a2a2a;

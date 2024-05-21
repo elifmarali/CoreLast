@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons"; // Import regularStar icon
 import AuthContext from "../context/AuthContext";
+import ThemeContext from "../context/ThemeContext";
 
 function LessonContent() {
   const {
@@ -20,6 +21,7 @@ function LessonContent() {
     star,
     getStar,
   } = useContext(LessonsContext);
+  const {theme}=useContext(ThemeContext)
   const {setIsExams}=useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const { educationId } = useParams();
@@ -92,7 +94,7 @@ function LessonContent() {
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <div className="lessonContent">
+          <div className={`lessonContent ${theme ==="dark" ?  theme : ""}`}>
             <h1 className="contentHeader">{selectedLessonInfo?.contentName}</h1>
             <div className="contentMain">
               <div className="contentMainTop">
