@@ -122,6 +122,7 @@ export const ExamsProvider = ({ children }) => {
   };
 
   const answerPost = async (examId, questionId, userAnswer, userId) => {
+    debugger
     try {
       await axios.post(
         QUESTION_API_URL + `checkUserPointWithQuestion?examId=${examId}&questionId=${questionId}&userAnswer=${userAnswer}&userId=${userId}`,

@@ -25,7 +25,6 @@ function Question() {
     questionThis,
     selectedAnswer,
     setSelectedAnswer,
-    currentUserId,
     answerPost,
     setAllExams,
     setQuestions,
@@ -34,7 +33,7 @@ function Question() {
     setQuestionLastIndex,
     setQuestionIdArray
   } = useContext(ExamsContext);
-  const {setIsExams}=useContext(AuthContext);
+  const {setIsExams,currentUserId}=useContext(AuthContext);
   const [minute, setMinute] = useState(40);
   const [second, setSecond] = useState(0);
 
